@@ -1,4 +1,13 @@
 {
-  "title": "Hello!",
-  "Message" : "This is English"
+  "Title": "Hello!",
+  "Message" : "This is English",
+  "Go" : "Go",
+  "MyAccount" : "MyAccount",
+  "Home":  "Home",
+  "Order": "Orders",
+  "Promotions": "Promotions",
+  "ContactUs": "ContactUs",
+  "Terms&Conditions": "Terms & Conditions",
+  "SelectLanguage": "Select a Language"
+
 }

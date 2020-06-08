@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:multilang/routes/Routes.dart';
+import 'package:multilang/screens/contactus.dart';
+import 'package:multilang/screens/firstScreen.dart';
+import 'package:multilang/screens/home.dart';
+import 'package:multilang/screens/order.dart';
+import 'package:multilang/screens/promotions.dart';
 import './AppLanguage.dart';
 import 'app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -9,8 +15,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   AppLanguage appLanguage = AppLanguage();
   await appLanguage.fetchLocale();
+  SystemChrome.setEnabledSystemUIOverlays([]);
   runApp(MyApp(
-    appLanguage: appLanguage,
+    appLanguage: appLanguage
+
   ));
 }
 
@@ -36,109 +44,16 @@ class MyApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
           ],
           debugShowCheckedModeBanner: false,
-          home: AppLang(),
+          home: LanguageSelector(),
+          routes: {
+            Routes.home: (context) => Home(),
+            Routes.order: (context) => Order(),
+            Routes.promotions: (context) => Promotions(),
+            Routes.contactUs: (context) => ContactUs(),
+          },
         );
       }),
     );
   }
 }
 
-class AppLang extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var appLanguage = Provider.of<AppLanguage>(context);
-    return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.person),
-                  Text('Drawer Header'),
-                ],
-              )),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-
-            SizedBox(
-              height: 290,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text("Terms & conditions"),
-                  Text("Terms & conditions"),
-                ],
-              ),
-            ),
-
-
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('title')),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              AppLocalizations.of(context).translate('Message'),
-              style: TextStyle(fontSize: 32),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {
-                    appLanguage.changeLanguage(Locale("en"));
-                  },
-                  child: Text('English'),
-                ),
-                RaisedButton(
-                  onPressed: () {
-                    appLanguage.changeLanguage(Locale("ar"));
-                  },
-                  child: Text('العربي'),
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}

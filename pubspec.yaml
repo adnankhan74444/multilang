@@ -26,6 +26,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_cupertino_localizations:
+  avatar_glow:
+  google_fonts: ^1.1.0
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -52,6 +55,7 @@ flutter:
   assets:
     - i18n/en.json
     - i18n/ar.json
+    - assets/images/Pepsi_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,5 +1,12 @@
 {
-  "title": "مرحبا!",
-  "Message" : "هذه هي اللغة العربي"
-
+  "Title": "مرحبا!",
+  "Message" : "هذه هي اللغة العربي",
+  "Go" : "اذهب",
+  "MyAccount" : "حسابي",
+  "Home": "الصفحة الرئيسية",
+  "Order": "طلب",
+  "Promotions": "الترقيات",
+  "ContactUs": "اتصل بنا",
+  "Terms&Conditions": "الأحكام والشروط",
+  "SelectLanguage": "اختر لغة"
 }
