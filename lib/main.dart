@@ -6,6 +6,7 @@ import 'package:multilang/screens/contactus.dart';
 import 'package:multilang/screens/firstScreen.dart';
 import 'package:multilang/screens/home.dart';
 import 'package:multilang/screens/order.dart';
+import 'package:multilang/screens/otp.dart';
 import 'package:multilang/screens/promotions.dart';
 import './AppLanguage.dart';
 import 'app_localizations.dart';
@@ -50,6 +51,8 @@ class MyApp extends StatelessWidget {
             Routes.order: (context) => Order(),
             Routes.promotions: (context) => Promotions(),
             Routes.contactUs: (context) => ContactUs(),
+            Routes.otp: (context) => Otp(),
+
           },
         );
       }),

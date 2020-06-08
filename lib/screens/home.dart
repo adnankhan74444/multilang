@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:multilang/routes/Routes.dart';
 import 'package:provider/provider.dart';
 
 import '../AppLanguage.dart';
@@ -22,7 +23,9 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Center(child: Text("Hello"),)
+            Center(child: InkWell(
+                onTap: ()=>Navigator.pushReplacementNamed(context, Routes.otp),
+                child: Text("Hello")),)
           ],
         ),
       ),
