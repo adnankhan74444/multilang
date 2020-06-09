@@ -25,10 +25,11 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_cupertino_localizations:
   avatar_glow:
   google_fonts: ^1.1.0
   sms_otp_auto_verify: ^1.2.2
+  carousel_slider: ^1.3.0
+
 
 
 
@@ -58,6 +59,7 @@ flutter:
     - i18n/en.json
     - i18n/ar.json
     - assets/images/Pepsi_logo.png
+    - assets/images/backgroundImg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

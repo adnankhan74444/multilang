@@ -8,6 +8,9 @@
   "Promotions": "Promotions",
   "ContactUs": "ContactUs",
   "Terms&Conditions": "Terms & Conditions",
-  "SelectLanguage": "Select a Language"
-
+  "SelectLanguage": "Select a Language",
+  "Agree": "Agree with out Terms & Conditions",
+  "LocateMe" : "Locate me",
+  "Login" : "LOGIN",
+  "Mobile" : "Mobile Number"
 }

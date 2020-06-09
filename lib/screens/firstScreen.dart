@@ -8,15 +8,7 @@ import 'dart:io' show Platform;
 import 'package:multilang/routes/Routes.dart';
 import 'package:provider/provider.dart';
 
-class ParentWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LanguageSelector(),
-    );
-  }
-}
+
 
 class LanguageSelector extends StatefulWidget {
   @override
@@ -31,8 +23,12 @@ class _LanguageSelectorState extends State<LanguageSelector> {
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Colors.blueAccent, //remove color to make it transpatent
+          image: DecorationImage(
+            image: AssetImage(AppAssets.BackgroundImage),
+            fit: BoxFit.fill,
+          ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,9 +88,9 @@ class _LanguageSelectorState extends State<LanguageSelector> {
             child: MaterialButton(
               minWidth: MediaQuery.of(context).size.width,
               onPressed: () {
-                appLanguage.changeLanguage(Locale(_lights?"en":"ar"));
+                appLanguage.changeLanguage(Locale(_lights ? "en" : "ar"));
                 Navigator.pushReplacementNamed(context, Routes.home);
-              } ,
+              },
               child: Text(
                 _lights ? AppStrings.English_Go : AppStrings.Arabic_Go,
                 textAlign: TextAlign.center,
